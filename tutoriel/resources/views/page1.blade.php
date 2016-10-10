@@ -5,6 +5,10 @@
     <title>Ma première vue</title>
 </head>
 <body>
-    Affichage de la page 1
+    <form method="post" action="">
+    <p>
+        <label>Votre pseudo</label> : <input type="text" name="pseudo" />
+    </p>
+</form>
 </body>
-</html
+</html>
