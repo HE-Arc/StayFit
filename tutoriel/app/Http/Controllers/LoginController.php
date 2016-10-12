@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class WelcomeController extends Controller
+class LoginController extends Controller
 {
 	public function index()
 	{
-		return view('welcome');
+		return view('login');
 	}
+
 }

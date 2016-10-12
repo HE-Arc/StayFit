@@ -9,11 +9,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-/*
-Route::get('1', function()
-{
-      return view('page1');
-});
-*/
-Route::get('1','WelcomeController@page1');
+/*----------------------Page Accueil----------------------*/
 Route::get('/', 'WelcomeController@index');
+
+/*----------------------Autre routes----------------------*/
+Route::get('login', 'LoginController@index');
+
+/*Route::get('{n}', function($n) { 
+    return 'Je suis la page ' . $n . ' !'; 
+})->where('n', '[1-3]');*/
+//Route::get('1','WelcomeController@page1');
+

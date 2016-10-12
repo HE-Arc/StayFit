@@ -2,9 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('titre')</title>
-</head>
+	<title>@yield('title')</title>
+	<style>
+     @yield('csslogin')
+    </style>
 <body>
-	@yield('contenu')
+    @yield('contenu')
 </body>
 </html>
