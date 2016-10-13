@@ -12,8 +12,10 @@
 /*----------------------Page Accueil----------------------*/
 Route::get('/', 'WelcomeController@index');
 
+
 /*----------------------Autre routes----------------------*/
 Route::get('login', 'LoginController@index');
+Route::post('login', 'LoginController@postForm');
 
 /*Route::get('{n}', function($n) { 
     return 'Je suis la page ' . $n . ' !'; 
