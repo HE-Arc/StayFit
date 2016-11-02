@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataTable extends Migration
+class CreateGpsPositionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
-        Schema::create('data', function(Blueprint $table){
+        Schema::create('gps_position', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('session_id')->unsigned();
+            $table->double('latitude');
+            $table->double('longitude');
+
+            $table->foreign('session_id')->references('id')->on('session_data')->onDelete('cascade');
         });
     }
 
@@ -27,6 +30,6 @@ class CreateDataTable extends Migration
      */
     public function down()
     {
-        Schema::drop('data');
+        Schema::drop('gps_position');
     }
 }
