@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/dataSample', 'DataSampleController@getForm');
+Route::post('/dataSample', ['uses' => 'DataSampleController@postForm', 'as' => 'addDataSample']);
