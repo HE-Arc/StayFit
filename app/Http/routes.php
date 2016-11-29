@@ -20,3 +20,13 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/dataSample', 'DataSampleController@getForm');
 Route::post('/dataSample', ['uses' => 'DataSampleController@postForm', 'as' => 'addDataSample']);
+
+Route::get('/user','UserProfileController@index');
+
+Route::get('/selection','DataSelectionController@index');
+
+Route::get('/compare','DataCompareController@index');
+
+Route::get('/view','DataViewController@index');
+
+
