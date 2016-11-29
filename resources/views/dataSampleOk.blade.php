@@ -8,7 +8,14 @@
                 <div class="panel-heading">Data add</div>
 
                 <div class="panel-body">
-				{{$message}}    
+				{{$message}}
+
+                <h2>Points</h2>
+                <ul>
+                @foreach($session->geometry as $point)
+                    <li>{{ $point[0] }}, {{ $point[1] }}</li>
+                @endforeach
+                </ul>
                 </div>
             </div>
         </div>
