@@ -25,7 +25,7 @@
                                 {!! Form::text('date', Auth::user()->birth_date, array('id' => 'datepicker')) !!}
                             </p>
                             <p>{!! Form::label('gender') !!}
-                                {!! Form::select('gender', array('F' => 'F', 'M' => 'M'), Auth::user()->gender) !!}
+                                {!! Form::select('gender', ['F' => 'F', 'M' => 'M'], Auth::user()->gender) !!}
                             </p>
                             <p>{!! Form::submit('Update') !!}</p>
                         </div>
