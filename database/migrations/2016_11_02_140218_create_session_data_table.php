@@ -26,6 +26,7 @@ class CreateSessionDataTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('activity_id')->references('id')->on('activity_type')->onDelete('cascade');
         });
+        DB::statement('ALTER TABLE session_data ADD geometry GEOMETRY');
     }
 
     /**
