@@ -25,7 +25,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Activity::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'coefficient' => random_int(0, 10),
+        'name' => array('walk','run','bike')[random_int(0, 2)],
+        'coefficient' => random_int(0,10),
     ];
 });
