@@ -43,7 +43,7 @@ $factory->define(App\Session::class, function (Faker\Generator $faker)
         'distance'=>rand(0,30)+rand(0,10)/10,
         'footsteps'=>rand(1,10000),
         'calories'=>rand(100,10000),
-        'geometry'=>"[[".$faker->latitude.",".$faker->longitude."],[".$faker->latitude.",".$faker->longitude."]]",
+        'geometry'=>[[$faker->latitude,$faker->longitude],[$faker->latitude,$faker->longitude]],
 //        'geometry'=>"[[20.4567,67.4467],[20.4560,67.4468],[20.4562,67.4464]]",
     ];
 });
