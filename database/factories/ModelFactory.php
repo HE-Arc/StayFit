@@ -29,3 +29,21 @@ $factory->define(App\Activity::class, function (Faker\Generator $faker) {
         'coefficient' => random_int(0,10),
     ];
 });
+$factory->define(App\Session::class, function (Faker\Generator $faker)
+{
+    return[
+        'user_id'=>function(){
+            return factory(App\User::class)->create()->id;
+        },
+        'duration'=>$faker->dateTime,
+        'date'=>$faker->dateTimeThisYear,
+        'activity_id'=>function(){
+            return factory(App\Activity::class)->create()->id;
+        },
+        'distance'=>rand(0,30)+rand(0,10)/10,
+        'footsteps'=>rand(1,10000),
+        'calories'=>rand(100,10000),
+        'geometry'=>"[[".$faker->latitude.",".$faker->longitude."],[".$faker->latitude.",".$faker->longitude."]]",
+//        'geometry'=>"[[20.4567,67.4467],[20.4560,67.4468],[20.4562,67.4464]]",
+    ];
+});
