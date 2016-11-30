@@ -14,58 +14,39 @@ use App\Activity;
 
 class DataSampleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getForm()
     {
-		return view('dataSample');
-	}
+        return view('dataSample');
+    }
 
-	public function postForm(DataSampleRequest $request)
-	{
-		/* Needed to add to DataBase */
-		/*$email = new Email;
-		$email->email = something
-		$email->save();*/
+    public function postForm(DataSampleRequest $request)
+    {
+        $file = $request->input('dataSample');
+        if (file_exists($file)) {
+            $string = file_get_contents($file);
+            $data = json_decode($string, true);
 
-		$file = $request->input('dataSample');
-		if (file_exists($file))
-		{
-            $data = ["geometry" => []];
-			$lines = file($file);
-			foreach ($lines as $lineContent)
-			{
-                $d = parse_ini_string($lineContent);
-                foreach($d as $k => $v) {
-                    if($k != "GEOPOS") {
-                        $data[$k] = $v;
-                    } else {
-                        if (preg_match('#(\\d+\\.\\d+)\\;(\\d+\.\\d+)#', $lineContent, $matches)) {
-                            $data["geometry"][] = [(float) $matches[1], (float) $matches[2]];
-                        }
-                    }
-                }
-
-			}
-
-            $activity = Activity::create(['name' => 'derp', 'coefficient' => 1]);
             $session = Auth::user()->sessions()->create([
-                "duration" => (int) $data["DURATION"],
-                "date" => date("Y-m-d"), // FIXME
-                "activity_id" => $activity->id,
-                "distance" => (int) $data["DISTANCE"],
-                "footsteps" => (int) $data["STEP_NUMBER"],
-                "calories" => (int) $data["KALORIES"],
-                "geometry" => $data["geometry"],
+                "duration" => $data["duration"],
+                "date" => date("Y-m-d", strtotime($data["date"])),
+                "activity_id" => (int)$data["activity_id"],
+                "distance" => (int)$data["distance"],
+                "footsteps" => (int)$data["footsteps"],
+                "calories" => (int)$data["calories"],
+                "geometry" => $data["geometry"]
             ]);
 
-            // Ceci est un test.
             $session = Session::find($session->id);
 
-			return view('dataSampleOk',['message' => 'The file correctly imported...', 'session' => $session]);
-		}
-		else
-		{
-			return view('dataSampleOk',['message' => 'The file doesnt exist, try again...']);
-		}
+            return view('dataSampleOk', ['message' => 'The file correctly imported...', 'session' => $session]);
+        } else {
+            return view('dataSampleOk', ['message' => 'The file doesnt exist, try again...']);
+        }
 
-	}
+    }
 }
