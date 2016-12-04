@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    <image img src="/img/stayfit.png" alt="Logo" align="middle"></image>
                 </div>
             </div>
         </div>

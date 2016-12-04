@@ -11,7 +11,6 @@ use App\Http\Controllers\Controller;
 use App\Session;
 use App\User;
 use App\Activity;
-
 class DataSampleController extends Controller
 {
     public function __construct()

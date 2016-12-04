@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\Http\Requests;
+use App\Session;
 use Khill\Lavacharts\Lavacharts;
 class DataViewController extends Controller
 {
@@ -26,16 +28,13 @@ class DataViewController extends Controller
 
     public function index()
     {
+        $data = \DB::table('session_data')->where('user_id', 1)->orderBy('date')->lists('date', 'id');
+
         $stocksTable = \Lava::DataTable();
 
         $stocksTable->addDateColumn('Day of Month')
             ->addNumberColumn('Projected')
             ->addNumberColumn('Official');
-
-
-
-
-// Random Data For Example
 
         $lava = new Lavacharts; // See note below for Laravel
         $finances = \Lava::DataTable();
@@ -53,13 +52,20 @@ class DataViewController extends Controller
         'fontSize' => 14]
         ]);
 
-        //$dataSamples = (DataSample ::lists('date', 'id'));
+
+
+
+
+        //$data = (Session::lists('date'));
+
         /* <div class="form-group">
                         {!! Form::Label('datas', 'datas:') !!}
                         {!! Form::select('datas', $dataSamples, null, ['class' => 'form-control']) !!}
-                    </div>*/
+                    </div>
+        div id="ca_graph"></div>
+                    @columnchart('Finances', 'ca_graph')
+        */
 
-        return view('dataView',compact('lava'));
-        //return view('dataView',compact('date', 'id'));
+        return view('dataView',compact('lava'), ['data' => $data]);
     }
 }

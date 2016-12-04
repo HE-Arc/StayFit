@@ -7,6 +7,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Selected Data Infos</div>
                 <div class="panel-body">
+                    <div class="form-group">
+                    {!! Form::select('session_data', $data) !!}
+                    </div>
                     <div id="ca_graph"></div>
                     @columnchart('Finances', 'ca_graph')
                 </div>
