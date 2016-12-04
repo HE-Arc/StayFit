@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    <image img src="/img/stayfit.png" alt="Logo" align="middle"></image>
+                    <image img src="{{URL::asset('/assets/images/stayfit.png')}}"></image>
                 </div>
             </div>
         </div>
