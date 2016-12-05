@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'pseudo', 'email', 'password','size','w1eight','gender','birth_date'
+        'pseudo', 'email', 'password','size','weight','gender','birth_date'
     ];
 
     /**
@@ -27,4 +27,6 @@ class User extends Authenticatable
     public function sessions() {
         return $this->hasMany('App\Session');
     }
+
+
 }

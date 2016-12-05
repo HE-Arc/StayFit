@@ -15,13 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::auth();
+Auth::routes();
+Route::get('logout','\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/dataSample', 'DataSampleController@getForm');
 Route::post('/dataSample', ['uses' => 'DataSampleController@postForm', 'as' => 'addDataSample']);
 
-Route::get('/user', ['uses' => 'UserProfileController@index','as' => 'formUser']);
+
+Route::get('/user', 'UserProfileController@index');
+Route::post('/user', ['uses' => 'UserProfileController@index','as' => 'formUser']);
 
 Route::get('/selection','DataSelectionController@index');
 
