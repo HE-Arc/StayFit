@@ -10,20 +10,18 @@
                     <div class="panel-body">
                         dataselection
 
-                        @section('data')
-                            {{!! $currentId=Auth::user()->id !!}}
-                            {{!! $session=App\Session::where('user_id',3)->first() !!}}
-                        @endsection
-                        {{--{{$session}}--}}
+                        <div class="panel-body">
+                            {!! Form::open (['route'=>'selectionSample']) !!}
 
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                Day {{$session->date}}
-                                Duration {{$session->duration }}
-                                Distance {{$session->distance }}
-                                Calories {{$session->calories }}
-                            </li>
-                        </ul>
+                                    {{--Day {{$session->date}}--}}
+                                    {{--Duration {{$session->duration }}--}}
+                                    {{--Distance {{$session->distance }}--}}
+                                    {{--Calories {{$session->calories }}--}}
+                                    @foreach($data as $entry)
+                                        {!! Form::submit($entry,['id'=>$entry]) !!}
+                                    @endforeach
+                            {!! Form::close() !!}
+                        </div>
                     </div>
                 </div>
             </div>
