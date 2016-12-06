@@ -36,11 +36,13 @@
                             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             }).addTo(mymap);
-                            var a = "{{$data->geometry}}";
-                            console.log(a);
 
-
-                            console.log( {{$data->geometry}} );
+                            for(var point in "{{$data->geometry}}")
+                            {
+                                console.log(point[0]);
+                                console.log(point[1]);
+                            }
+                            console.log(Line);
 
                             L.marker([50.12, 10.12]).addTo(mymap)
                                 .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
