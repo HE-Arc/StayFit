@@ -15,20 +15,20 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'pseudo' => $faker->name,
         'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'password' => bcrypt("pass1234"),
         'size' => random_int(100, 300),
         'weight' => random_int(40, 200),
-        'birth_date' => $faker->date('d-m-Y'),
-        'gender' => $faker->word,
+        'birth_date' => $faker->date('Y-m-d'),
+        'gender' => "M",
         'bmi' => random_int(100, 300),
     ];
 });
-$factory->define(App\Activity::class, function (Faker\Generator $faker) {
-    return [
-        'name' => array('walk','run','bike')[random_int(0, 2)],
-        'coefficient' => random_int(0,10),
-    ];
-});
+//$factory->define(App\Activity::class, function (Faker\Generator $faker) {
+//    return [
+//        'name' => array('walk','run','bike')[random_int(0, 2)],
+//        'coefficient' => random_int(0,10),
+//    ];
+//});
 $factory->define(App\Session::class, function (Faker\Generator $faker)
 {
     return[
@@ -37,9 +37,7 @@ $factory->define(App\Session::class, function (Faker\Generator $faker)
         },
         'duration'=>$faker->dateTime,
         'date'=>$faker->dateTimeThisYear,
-        'activity_id'=>function(){
-            return factory(App\Activity::class)->create()->id;
-        },
+        'activity_id'=>random_int(1,3),
         'distance'=>rand(0,30)+rand(0,10)/10,
         'footsteps'=>rand(1,10000),
         'calories'=>rand(100,10000),
