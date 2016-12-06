@@ -12,13 +12,8 @@
 
                         <div class="panel-body">
                             {!! Form::open (['route'=>'selectionSample']) !!}
-
-                                    {{--Day {{$session->date}}--}}
-                                    {{--Duration {{$session->duration }}--}}
-                                    {{--Distance {{$session->distance }}--}}
-                                    {{--Calories {{$session->calories }}--}}
                                     @foreach($data as $entry)
-                                        {!! Form::submit($entry,['id'=>$entry]) !!}
+                                        {!! Form::submit($data,['id'=>$entry]) !!}
                                     @endforeach
                             {!! Form::close() !!}
                         </div>
