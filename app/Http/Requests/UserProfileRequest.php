@@ -23,8 +23,6 @@ class UserProfileRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+            return ['birth_date' => 'required|date|before:today' ];
     }
 }

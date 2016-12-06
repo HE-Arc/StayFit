@@ -16,13 +16,18 @@
                             </p>
                             <p>
                                 {!! Form::label('size') !!}
-                                {!! Form::selectRange('sizeNum', 0, 200, Auth::user()->size) !!}
+                                {!! Form::selectRange('size', 0, 200, Auth::user()->size) !!}
                             </p>
                             <p>{!! Form::label('weight') !!}
-                                {!! Form::selectRange('weightNum', 0, 200, Auth::user()->weight) !!}
+                                {!! Form::selectRange('weight', 0, 200, Auth::user()->weight) !!}
                             </p>
                             <p>{!! Form::label('Birth date') !!}
-                                {!! Form::text('date', Auth::user()->birth_date, ['id' => 'datepicker']) !!}
+                                {!! Form::text('birth_date', Auth::user()->birth_date, ['id' => 'datepicker','readonly'=>'readonly']) !!}
+                                @if ($errors->has('birth_date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('birth_date') }}</strong>
+                                    </span>
+                                @endif
                             </p>
                             <p>{!! Form::label('gender') !!}
                                 {!! Form::select('gender', ['F' => 'F', 'M' => 'M'], Auth::user()->gender) !!}

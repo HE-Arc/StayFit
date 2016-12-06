@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Session;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
 use App\Http\Requests\UserProfileRequest;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Redirect;
 
 class UserProfileController extends Controller
 {
@@ -32,11 +34,12 @@ class UserProfileController extends Controller
 
     public function postForm(UserProfileRequest $request)
     {
-        $user = Auth::User()->find(Auth::User()->id);
-        $user->size = $request->sizeNum;
-        $user->weight = $request->weightNum;
+        $user = Auth::User()->find(Auth::id());
+        $user->size = $request->size;
+        $user->weight = $request->weight;
         $user->gender = $request->gender;
-        $user->birth_date = $request->date;
+        $user->birth_date = $request->birth_date;
         $user->save();
+        return view('userProfileOk');
     }
 }
