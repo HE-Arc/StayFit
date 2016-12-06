@@ -29,9 +29,10 @@ class DataViewController extends Controller
     public function index()
     {
         $data = DataSample::all(['date']);
-       // $data = DataSample::where('user_id',1)->orderBy('date')->get();
+        $data= DataSample::find(18);
+        // $data = DataSample::where('user_id',1)->orderBy('date')->get();
 
-        $stocksTable = Lava::DataTable();
+        /*$stocksTable = Lava::DataTable();
         $stocksTable->addDateColumn('Day of Month')
             ->addNumberColumn('Projected')
             ->addNumberColumn('Official');
@@ -50,8 +51,8 @@ class DataViewController extends Controller
         'titleTextStyle' => [
         'color'    => '#000',
         'fontSize' => 14]
-        ]);
-
+        ]);*/
+        /* @columnchart('Finances', 'ca_graph')*/
         return view('dataView',compact('lava'), ['data' => $data]);
     }
 }

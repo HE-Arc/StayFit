@@ -42,6 +42,7 @@ class DataSampleController extends Controller
 
             $session = Session::find($session->id);
 
+
             return view('dataSampleOk', ['message' => 'The file correctly imported...', 'session' => $session]);
         } else {
             return view('dataSampleOk', ['message' => 'The file doesnt exist, try again...']);

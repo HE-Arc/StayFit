@@ -1,20 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Selected Data Infos</div>
-                <div class="panel-body">
-                    <div class="form-group">
-                    {!! Form::select('session_data', $data) !!}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Selected Data Infos</div>
+                    <div class="panel-body">
+                        <p><b>Required time</b></p>
+                        <ul>
+                            <li>{{$data->duration}}</li>
+                        </ul>
+
+                        <p><b>Covered distance</b></p>
+                        <ul>
+                            <li>{{$data->distance}}</li>
+                        </ul>
+
+                        <p><b>Burned calories</b></p>
+                        <ul>
+                            <li>{{$data->calories}}</li>
+                        </ul>
+
+                        <p><b>Needed footsteps</b></p>
+                        <ul>
+                            <li>{{$data->footsteps}}</li>
+                        </ul>
+
+
+                        <div style="width:500px; height:500px" id="mapid"></div>
+
+                        <script>
+                            var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+                            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(mymap);
+                            var a = "{{$data->geometry}}";
+                            console.log(a);
+
+
+                            console.log( {{$data->geometry}} );
+
+                            L.marker([50.12, 10.12]).addTo(mymap)
+                                .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+
+                        </script>
+
                     </div>
-                    <div id="ca_graph"></div>
-                    @columnchart('Finances', 'ca_graph')
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

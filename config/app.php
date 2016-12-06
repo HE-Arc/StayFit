@@ -159,6 +159,7 @@ return [
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+
     ],
 
     /*
