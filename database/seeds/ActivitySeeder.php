@@ -11,6 +11,18 @@ class ActivitySeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Activity::class,2)->create();
+
+        \App\Activity::create([
+            'name'=>'bike',
+            'coefficient'=>8,
+        ]);
+        \App\Activity::create([
+            'name'=>'run',
+            'coefficient'=>6,
+        ]);
+        \App\Activity::create([
+            'name'=>'walk',
+            'coefficient'=>5,
+        ]);
     }
 }
