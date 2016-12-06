@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
+use App\DataSample;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
@@ -27,13 +29,15 @@ class DataSelectionController extends Controller
     public function index()
     {
         $userId=Auth::user()->id;
-        $data=Session::select('footsteps','duration','distance','calories')->where('user_id',$userId)->get();
+        $data=DataSample::select('date','footsteps','duration','distance','calories')->where('user_id',$userId)->get();
 
-        return view('dataSelection',['data'=>$data]);
+        $typeActivity=Activity::select('name');
+
+        return view('dataSelection',['data'=>$data,'type'=>$typeActivity]);
     }
     public function postForm(Requests\dataSelectRequest $request)
     {
-        return view('dataView',['data'=>$request]);
+         return view('dataView',['data'=>$request]);
     }
 
 }
