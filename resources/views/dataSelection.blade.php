@@ -10,7 +10,9 @@
                     <div class="panel-body">
                         <div class="list-group">
                             @foreach($data as $entry)
-                                <a href="{!!action('DataSelectionController@send',['id'=>$entry->id])!!}" class="list-group-item">{!! $entry->date." ".$entry->duration !!}</a>
+                                <a href="{!!action('DataSelectionController@send',['id'=>$entry->id])!!}" class="list-group-item">
+                                    {!! "Date: ".$entry->date." Duration: ".$entry->duration." Type: ".$type[$entry->activity_id]->name !!}
+                                </a>
                             @endforeach
                         </div>
                     </div>

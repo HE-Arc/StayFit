@@ -40,7 +40,7 @@ class DataSelectionController extends Controller
     }
     public function send($request)
     {
-        $data=DataSample::find($request);
+        $data=Session::find($request);
         return view('dataView',['data'=>$data]);
     }
 }
