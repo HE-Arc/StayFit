@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
 use App\Session;
+use Khill\Lavacharts\Lavacharts;
+use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
 
 class DataSelectionController extends Controller
 {
@@ -41,5 +43,4 @@ class DataSelectionController extends Controller
         $data=DataSample::find($request);
         return view('dataView',['data'=>$data]);
     }
-
 }
