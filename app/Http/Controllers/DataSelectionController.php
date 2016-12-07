@@ -28,16 +28,18 @@ class DataSelectionController extends Controller
      */
     public function index()
     {
-        $userId=Auth::user()->id;
-        $data=DataSample::select('date','footsteps','duration','distance','calories')->where('user_id',$userId)->get();
+        //TODO: define what it's really needed to be send
+        $user=Auth::user();
+        $data=DataSample::select('date','footsteps','duration','distance','calories','activity_id','id')->where('user_id',$user->id)->get();
 
-        $typeActivity=Activity::select('name');
+        $typeActivity=Activity::select('name')->get();
 
         return view('dataSelection',['data'=>$data,'type'=>$typeActivity]);
     }
-    public function postForm(Requests\dataSelectRequest $request)
+    public function send($request)
     {
-         return view('dataView',['data'=>$request]);
+        $data=DataSample::find($request);
+        return view('dataView',['data'=>$data]);
     }
 
 }
