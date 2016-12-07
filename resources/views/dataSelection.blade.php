@@ -10,12 +10,10 @@
                     <div class="panel-body">
                         dataselection
 
-                        <div class="panel-body">
-                            {!! Form::open (['route'=>'selectionSample']) !!}
-                                    @foreach($data as $entry)
-                                        {!! Form::submit($data,['id'=>$entry]) !!}
-                                    @endforeach
-                            {!! Form::close() !!}
+                        <div class="list-group">
+                            @foreach($data as $entry)
+                                <a href="{!!action('DataSelectionController@send',['id'=>$entry->id])!!}" class="list-group-item">{!! $entry->date." ".$entry->duration !!}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
