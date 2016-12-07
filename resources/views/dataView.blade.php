@@ -51,7 +51,6 @@
                             });
                             line.addTo(map);
                             L.setView([pointTab[pointTab.length-1][0], pointTab[pointTab.length-1][1]], 20);
-
                         </script>
 
                     </div>

@@ -10,29 +10,34 @@
                     <div class="panel-body">
                         {!! Form::open(['route' => 'formUser']) !!}
                         <div class="form-group">
-                            <p>
-                                {!! Form::label('Nom') !!}
-                                {!! Auth::user()->pseudo !!}
-                            </p>
-                            <p>
-                                {!! Form::label('size') !!}
-                                {!! Form::selectRange('size', 0, 200, Auth::user()->size) !!}
-                            </p>
-                            <p>{!! Form::label('weight') !!}
-                                {!! Form::selectRange('weight', 0, 200, Auth::user()->weight) !!}
-                            </p>
-                            <p>{!! Form::label('Birth date') !!}
-                                {!! Form::text('birth_date', Auth::user()->birth_date, ['id' => 'datepicker','readonly'=>'readonly']) !!}
-                                @if ($errors->has('birth_date'))
-                                    <span class="help-block">
+                            {!! Form::label('Nom') !!}
+                            {!! Auth::user()->pseudo !!}
+                            <ul class=flex-outer">
+                                <li>
+                                    {!! Form::label('size') !!}
+                                    {!! Form::selectRange('size', 0, 200, Auth::user()->size) !!}
+                                </li>
+                                <li>
+                                    {!! Form::label('weight') !!}
+                                    {!! Form::selectRange('weight', 0, 200, Auth::user()->weight) !!}
+                                </li>
+                                <li>
+                                    {!! Form::label('Birth date') !!}
+                                    {!! Form::text('birth_date', Auth::user()->birth_date, ['id' => 'datepicker','readonly'=>'readonly']) !!}
+                                    @if ($errors->has('birth_date'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('birth_date') }}</strong>
                                     </span>
-                                @endif
-                            </p>
-                            <p>{!! Form::label('gender') !!}
-                                {!! Form::select('gender', ['F' => 'F', 'M' => 'M'], Auth::user()->gender) !!}
-                            </p>
-                            <p>{!! Form::submit('Update') !!}</p>
+                                    @endif
+                                </li>
+                                <li>
+                                    {!! Form::label('gender') !!}
+                                    {!! Form::select('gender', ['F' => 'F', 'M' => 'M'], Auth::user()->gender) !!}
+                                </li>
+                                <li>
+                                    {!! Form::submit('Update') !!}
+                                </li>
+                            </ul>
                         </div>
                         {!! Form::close() !!}
                     </div>
