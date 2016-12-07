@@ -11,10 +11,19 @@
                         dataselection
 
                         <div class="panel-body">
+
                             {!! Form::open (['route'=>'selectionSample']) !!}
-                                    @foreach($data as $entry)
-                                        {!! Form::submit($data,['id'=>$entry]) !!}
-                                    @endforeach
+                            {!! Form::select('items', $data, null) !!}
+
+                            <ul class="list-group">
+                            @foreach($data as $entry)
+                                    <a href="#" class="list-group-item ">{!! $entry !!}</a>
+                            @endforeach
+
+
+
+                            </ul>
+                            {!! Form::submit('Validate') !!}
                             {!! Form::close() !!}
                         </div>
                     </div>
