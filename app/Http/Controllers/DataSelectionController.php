@@ -38,8 +38,7 @@ class DataSelectionController extends Controller
 
     public function postForm(Requests\dataSelectRequest $request)
     {
-        //return view('dataView',['data'=>$request]);1
-        $data= DataSample::find($request->items);
+        $data= Session::find($request->items);
         return view('dataView',compact('lava'), ['data' => $data]);
     }
 
