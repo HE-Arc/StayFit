@@ -30,17 +30,24 @@ class DataSelectionController extends Controller
      */
     public function index()
     {
-        //TODO: define what it's really needed to be send
-        $user=Auth::user();
-        $data=DataSample::select('date','footsteps','duration','distance','calories','activity_id','id')->where('user_id',$user->id)->get();
+        $user = Auth::user();
+        $data = DataSample::select('date', 'footsteps', 'duration', 'distance', 'calories', 'activity_id', 'id')->where('user_id', $user->id)->get();
 
-        $typeActivity=Activity::select('name')->get();
+        $typeActivity = Activity::select('name')->get();
 
-        return view('dataSelection',['data'=>$data,'type'=>$typeActivity]);
+        return view('dataSelection', ['data' => $data, 'type' => $typeActivity]);
     }
+
     public function send($request)
     {
-        $data=Session::find($request);
-        return view('dataView',['data'=>$data]);
+        //Get session row where id=selected one ($request) and where user_id correspond to
+        // current user => if not, it means that this user doesn't have right to display this session.
+        $result = Session::where('id',$request)->where('user_id',Auth::id())->first();
+        if(count($result)==1)
+        {
+            return view('dataView', ['data' => $result]);
+        }else{
+            return view('Welcome');
+        }
     }
 }
