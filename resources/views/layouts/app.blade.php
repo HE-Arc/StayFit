@@ -31,26 +31,6 @@
             margin-right: 6px;
         }
     </style>
-    <style>
-        .flex-outer li,
-        .flex-inner {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .flex-outer > li > label,
-        .flex-outer li p {
-            flex: 1 0 120px;
-            max-width: 220px;
-        }
-
-        .flex-outer > li > label + *,
-        .flex-inner {
-            flex: 1 0 220px;
-        }
-
-    </style>
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default navbar-static-top">
