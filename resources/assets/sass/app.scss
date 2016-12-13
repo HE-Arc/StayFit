@@ -1,5 +1,53 @@
-//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-.control-label{
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.panel-default .panel-heading {
+  color: whitesmoke;
+  background-color: #58BB4E;
+}
+
+.panel {
+  //background-color: #FFFFDD;
+  //background: transparent;
+  opacity: 0.98;
+  border: none;
+}
+
+.panel-body {
+  opacity: 0.9;
+}
+
+.list-group-item {
+  background-color: rgba(189, 228, 174, 0.91);
+  border: 1px solid grey;
+  margin-top: 1%;
+}
+
+.list-group-item:hover{
+  background-color: rgba(133, 224, 106, 0.88);
+}
+
+body {
+  background-color: #4cae4c;
+  background-image: url("../assets/images/Shoot3.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
 }
 
+.navbar {
+  color: whitesmoke;
+  background-color: #2ca02c;
+  border: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: whitesmoke;
+}
+
+.navbar .navbar-brand {
+  color: whitesmoke;
+
+}
