@@ -34,7 +34,7 @@
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
+    <div class="container"> <!-- TODO:, add style as attribute (example style="color:blue;text-align:center") avec comme attribute  background-image:url('yourimage.file'); -->
         <div class="navbar-header">
 
             <!-- Collapsed Hamburger -->
