@@ -29,7 +29,8 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('userProfile');
+        $user = Auth::User();
+        return view('userProfile',['user' => $user]);
     }
 
     public function postForm(UserProfileRequest $request)

@@ -10,7 +10,7 @@
                         {!! Form::open(['route' => 'addDataSample']) !!}
                         <div class="form-group">
                             {!! Form::label('File to import') !!}
-                            {!! Form::file('dataSample', null, array('required','class'=>'form-control', 'placeholder'=>'File name')) !!}
+                            {!! Form::file('dataSample', null, ['required','class'=>'form-control', 'placeholder'=>'File name']) !!}
                             {!! Form::submit('Submit!', ['class' => 'btn btn-info pull-right']) !!}
                         </div>
                         {!! Form::close() !!}
