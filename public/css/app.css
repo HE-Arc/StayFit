@@ -5768,4 +5768,7 @@ body {
 .navbar .navbar-brand {
   color: whitesmoke; }
 
+.dataView {
+  display: table; }
+
 /*# sourceMappingURL=app.css.map */
