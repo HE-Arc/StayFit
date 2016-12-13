@@ -16,9 +16,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
+
     <style>
         body {
             font-family: 'Lato';
@@ -87,8 +90,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->pseudo }} <span class="caret"></span>
                         </a>
-
-
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/user') }}"></i>Profile</a></li>
