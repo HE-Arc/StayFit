@@ -1,5 +1,31 @@
-//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-.control-label{
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.panel-default .panel-heading{
+  color: forestgreen;
+  background-color: #2e3436;
+}
+.panel-body{
+  //background-color: greenyellow;
+  opacity: 0.5;
+}
+.list-group-item{
+  background-color:lightgrey;
+}
+body{
+  background-color: #2e3436;
+  background-image: url("../assets/images/Shoot3.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
 }
+.navbar{
+  color:whitesmoke;
 
+}
+.navbar .navbar-nav{
+  color: whitesmoke;
+
+}
