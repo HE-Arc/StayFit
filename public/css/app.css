@@ -5731,17 +5731,26 @@ button.close {
     display: none !important; } }
 
 .panel-default .panel-heading {
-  color: forestgreen;
-  background-color: #2e3436; }
+  color: whitesmoke;
+  background-color: #58BB4E; }
+
+.panel {
+  opacity: 0.98;
+  border: none; }
 
 .panel-body {
-  opacity: 0.5; }
+  opacity: 0.9; }
 
 .list-group-item {
-  background-color: lightgrey; }
+  background-color: rgba(189, 228, 174, 0.91);
+  border: 1px solid grey;
+  margin-top: 1%; }
+
+.list-group-item:hover {
+  background-color: rgba(133, 224, 106, 0.88); }
 
 body {
-  background-color: #2e3436;
+  background-color: #4cae4c;
   background-image: url("../assets/images/Shoot3.jpg");
   background-size: cover;
   background-position: center;
@@ -5749,9 +5758,14 @@ body {
   background-attachment: fixed; }
 
 .navbar {
+  color: whitesmoke;
+  background-color: #2ca02c;
+  border: none; }
+
+.navbar-default .navbar-nav > li > a {
   color: whitesmoke; }
 
-.navbar .navbar-nav {
+.navbar .navbar-brand {
   color: whitesmoke; }
 
 /*# sourceMappingURL=app.css.map */

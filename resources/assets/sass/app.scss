@@ -1,18 +1,33 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.panel-default .panel-heading{
-  color: forestgreen;
-  background-color: #2e3436;
+.panel-default .panel-heading {
+  color: whitesmoke;
+  background-color: #58BB4E;
 }
-.panel-body{
-  //background-color: greenyellow;
-  opacity: 0.5;
+
+.panel {
+  //background-color: #FFFFDD;
+  //background: transparent;
+  opacity: 0.98;
+  border: none;
 }
-.list-group-item{
-  background-color:lightgrey;
+
+.panel-body {
+  opacity: 0.9;
 }
-body{
-  background-color: #2e3436;
+
+.list-group-item {
+  background-color: rgba(189, 228, 174, 0.91);
+  border: 1px solid grey;
+  margin-top: 1%;
+}
+
+.list-group-item:hover{
+  background-color: rgba(133, 224, 106, 0.88);
+}
+
+body {
+  background-color: #4cae4c;
   background-image: url("../assets/images/Shoot3.jpg");
   -webkit-background-size: cover;
   background-size: cover;
@@ -21,11 +36,18 @@ body{
   background-attachment: fixed;
 
 }
-.navbar{
-  color:whitesmoke;
 
+.navbar {
+  color: whitesmoke;
+  background-color: #2ca02c;
+  border: none;
 }
-.navbar .navbar-nav{
+
+.navbar-default .navbar-nav > li > a {
+  color: whitesmoke;
+}
+
+.navbar .navbar-brand {
   color: whitesmoke;
 
 }
