@@ -7,7 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
-                    datacompare
+                    <div id="perf_div"></div>
+                   <!-- TODO Form to send -->
                 </div>
             </div>
         </div>
