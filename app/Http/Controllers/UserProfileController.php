@@ -30,17 +30,22 @@ class UserProfileController extends Controller
     public function index()
     {
         $user = Auth::User();
-        return view('userProfile',['user' => $user]);
+        return view('userProfile', ['user' => $user]);
     }
 
     public function postForm(UserProfileRequest $request)
     {
-        $user = Auth::User()->find(Auth::id());
-        $user->size = $request->size;
-        $user->weight = $request->weight;
-        $user->gender = $request->gender;
-        $user->birth_date = $request->birth_date;
-        $user->save();
+        $user = Auth::User();
+//        $user->size = $request->size;
+//        $user->weight = $request->weight;
+//        $user->gender = $request->gender;
+//        $user->birth_date = $request->birth_date;
+        $user->update([
+            'size' => $request->size,
+            'weight' => $request->weight,
+            'gender' => $request->gender,
+            'birth_date'=> $request->birth_date
+        ]);
         return view('userProfileOk');
     }
 }

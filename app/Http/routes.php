@@ -24,7 +24,7 @@ Route::post('/dataSample', ['uses' => 'DataSampleController@postForm', 'as' => '
 
 
 Route::get('/user', 'UserProfileController@index');
-Route::post('/user', ['uses' => 'UserProfileController@postForm','as' => 'formUser']);
+Route::post('/user', ['uses' => 'UserProfileController@postForm','as' => 'user.update']);
 
 Route::get('/selection','DataSelectionController@index');
 Route::get('/selection/{id}' ,'DataSelectionController@send');
