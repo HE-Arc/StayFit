@@ -8,16 +8,16 @@
                     <div class="panel-heading">Sessions comparison</div>
                     <div class="panel-body">
                         <div id="footsteps_div">
-                        <?= Lava::render('ColumnChart', 'Footsteps', 'footsteps_div') ?>
+                            {!!Lava::render('ColumnChart', 'Footsteps', 'footsteps_div')!!}
                         </div>
                         <div id="distance_div">
-                            <?= Lava::render('ColumnChart', 'Distance', 'distance_div') ?>
+                            {!!Lava::render('ColumnChart', 'Distance', 'distance_div')!!}
                         </div>
                         <div id="calories_div">
-                            <?= Lava::render('ColumnChart', 'Calories', 'calories_div') ?>
+                            {!!Lava::render('ColumnChart', 'Calories', 'calories_div')!!}
                         </div>
                         <div id="speed_div" align="center">
-                            <?= Lava::render('GaugeChart', 'Speed', 'speed_div') ?>
+                            {!!Lava::render('GaugeChart', 'Speed', 'speed_div')!!}
                         </div>
                     </div>
                 </div>
