@@ -56,4 +56,9 @@ class Session extends Model
         $linestring = implode(",", $ps);
         return "LINESTRING($linestring)";
     }
+
+    public function activity()
+    {
+        return $this->belongsTo('App\activity');
+    }
 }

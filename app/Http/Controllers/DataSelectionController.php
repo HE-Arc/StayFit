@@ -31,11 +31,8 @@ class DataSelectionController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = DataSample::select('date', 'footsteps', 'duration', 'distance', 'calories', 'activity_id', 'id')->where('user_id', $user->id)->get();
-
-        $typeActivity = Activity::select('name')->get();
-
-        return view('dataSelection', ['data' => $data, 'type' => $typeActivity]);
+        $data = session::where('user_id', $user->id)->with('activity')->get();
+        return view('dataSelection', ['data' => $data]);
     }
 
     public function send($request)
