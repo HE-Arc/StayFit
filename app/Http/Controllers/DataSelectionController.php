@@ -31,7 +31,7 @@ class DataSelectionController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data = session::where('user_id', $user->id)->with('activity')->get();
+        $data=$user->sessions()->with('activity')->get();
         return view('dataSelection', ['data' => $data]);
     }
 
