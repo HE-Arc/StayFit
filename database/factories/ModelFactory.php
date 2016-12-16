@@ -23,21 +23,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'bmi' => random_int(100, 300),
     ];
 });
-//$factory->define(App\Activity::class, function (Faker\Generator $faker) {
-//    return [
-//        'name' => array('walk','run','bike')[random_int(0, 2)],
-//        'coefficient' => random_int(0,10),
-//    ];
-//});
 $factory->define(App\Session::class, function (Faker\Generator $faker)
 {
+    $actIDS=collect(\App\Activity::pluck('id'));
+    $userIDS=collect(\App\User::pluck('id'));
     return[
-        'user_id'=>function(){
-            return factory(App\User::class)->create()->id;
-        },
+        'user_id'=>$userIDS->random(),
         'duration'=>$faker->dateTime,
         'date'=>$faker->dateTimeThisYear,
-        'activity_id'=>random_int(1,3),
+//        'activity_id'=>random_int(1,3),
+        'activity_id'=>$actIDS->random(),
         'distance'=>rand(0,30)+rand(0,10)/10,
         'footsteps'=>rand(1,10000),
         'calories'=>rand(100,10000),

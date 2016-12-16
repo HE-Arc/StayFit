@@ -11,7 +11,7 @@
                         <div class="list-group">
                             @foreach($data as $entry)
                                 <a href="{!!action('DataSelectionController@send',['id'=>$entry->id])!!}" class="list-group-item">
-                                    {!! "Date: ".$entry->date." Duration: ".$entry->duration." Type: ".$type[$entry->activity_id]->name !!}
+                                    {!! "Date: ".$entry->date." Duration: ".$entry->duration." Type: ".$type[$entry->activity_id-1]->name !!}
                                 </a>
                             @endforeach
                         </div>

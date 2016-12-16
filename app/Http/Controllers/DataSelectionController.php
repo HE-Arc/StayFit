@@ -47,7 +47,7 @@ class DataSelectionController extends Controller
         {
             return view('dataView', ['data' => $result]);
         }else{
-            return view('Welcome');
+            return redirect('/');
         }
     }
 }
