@@ -15,15 +15,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-sm-2">Size</label>
+                            <label class="control-label col-sm-2">Size[cm]</label>
                             <div class="col-sm-10">
-                                {!! Form::selectRange('size', 0, 200) !!}
+                                {!! Form::selectRange('size', 100, 250) !!}
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-sm-2">Weight</label>
+                            <label class="control-label col-sm-2">Weight[kg]</label>
                             <div class="col-sm-10">
-                                {!! Form::selectRange('weight', 0, 200) !!}
+                                {!! Form::selectRange('weight', 45, 200) !!}
                             </div>
                         </div>
                         <div class="form-group row">
