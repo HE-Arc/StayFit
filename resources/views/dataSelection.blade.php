@@ -9,7 +9,7 @@
                     <div class="panel-body">
                         <div class="list-group">
                             @foreach($data as $entry)
-                                <a href="{!!action('DataSelectionController@send',['id'=>$entry->id])!!}" class="list-group-item">
+                                <a href="{!!action('DataSelectionController@send',['id'=>$entry->id])!!}" class="list-group-item sessionItems">
                                     {!! "Date: ".$entry->date." Duration: ".$entry->duration." Type: ".$entry->activity->name !!}
                                 </a>
                             @endforeach

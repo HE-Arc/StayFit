@@ -8,10 +8,15 @@
                     <div class="panel-heading">Import personnal Stayfit data</div>
                     <div class="panel-body">
                         {!! Form::open(['route' => 'addDataSample']) !!}
-                        <div class="form-group">
-                            <p>{!! Form::file('dataSample', null) !!}</p>
-                            <p>{!! Form::submit('Validate') !!}</p>
-
+                        <div class="form-group row">
+                            <div class="col-md-9">
+                                {!! Form::file('dataSample', null) !!}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-9">
+                                {!! Form::submit('Validate') !!}
+                            </div>
                         </div>
                         {!! Form::close() !!}
                     </div>
