@@ -55,6 +55,7 @@
                 <li><a href="{{ url('/home') }}">Home</a></li>
                 <li><a href="{{ url('/dataSample') }}">Import data</a></li>
                 <li><a href="{{ url('/selection') }}">Sessions</a></li>
+                <li><a href="{{ url('/compare') }}">Compare</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

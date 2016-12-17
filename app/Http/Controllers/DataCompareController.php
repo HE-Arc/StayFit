@@ -10,6 +10,8 @@ use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
 use Auth;
 use App\Activity;
 use App\DataSample;
+use App\Http\Requests\DataCompareRequest;
+
 class DataCompareController extends Controller
 {
     /**
@@ -33,13 +35,12 @@ class DataCompareController extends Controller
         $data=DataSample::select('date','footsteps','duration','distance','calories')->where('user_id',$userId)->get();
         $data=DataSample::select('id','date','footsteps','duration','distance','calories')->where('user_id',$userId)->pluck('date', 'id');
         $typeActivity=Activity::select('name');
-
         return view('dataCompare',['data'=>$data,'type'=>$typeActivity]);
     }
-    public function send($request)
+    public function send(DataCompareRequest $request)
     {
-        $data1 = Session::find(10);
-        $data2 = Session::find(12);
+        $data1 = Session::find($request->items);
+        $data2 = Session::find($request->items2);
 
         $lava = new Lavacharts;
 

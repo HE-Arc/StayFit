@@ -8,7 +8,11 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
                     <div id="perf_div"></div>
-                   <!-- TODO Form to send -->
+                    {!! Form::open (['route'=>'selectionSample']) !!}
+                    {!! Form::select('items', $data, null) !!}
+                    {!! Form::select('items2', $data, null) !!}
+                    {!! Form::submit('Comparer') !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
