@@ -8,32 +8,31 @@
                     <div class="panel-heading">Imported data content</div>
 
                     <div class="panel-body">
-
-                        <p><b>Required time</b></p>
-                        <ul>
-                            <li>{{$session->duration}}</li>
-                        </ul>
-
-                        <p><b>Covered distance</b></p>
-                        <ul>
-                            <li>{{$session->distance}}</li>
-                        </ul>
-
-                        <p><b>Burned calories</b></p>
-                        <ul>
-                            <li>{{$session->calories}}</li>
-                        </ul>
-
-                        <p><b>Needed footsteps</b></p>
-                        <ul>
-                            <li>{{$session->footsteps}}</li>
-                        </ul>
-
-                        <p><b>Visited Geopositions</b></p>
-                        <ul>
-                            @foreach($session->geometry as $point)
-                                <li>{{ $point[0] }}, {{ $point[1] }}</li>
-                            @endforeach
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h3>Duration</h3>
+                                <p>{{$session->duration}}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h3>Covered distance</h3>
+                                <p>{{$session->distance}}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h3>Burned calories</h3>
+                                <p>{{$session->calories}}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h3>Footsteps</h3>
+                                <p>{{$session->footsteps}}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h3>Gps positions</h3>
+                                @foreach($session->geometry as $point)
+                                    <li class="list-group-item">
+                                        {{ $point[0] }}, {{ $point[1] }}
+                                    </li>
+                                @endforeach
+                            </li>
                         </ul>
                     </div>
                 </div>
