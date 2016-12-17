@@ -34,19 +34,6 @@
                                 @endforeach
                             </li>
                         </ul>
-
-
-                        {{--<p><b>Needed footsteps</b></p>--}}
-                        {{--<ul>--}}
-                        {{--<li>{{$session->footsteps}}</li>--}}
-                        {{--</ul>--}}
-
-                        {{--<p><b>Visited Geopositions</b></p>--}}
-                        {{--<ul>--}}
-                        {{--@foreach($session->geometry as $point)--}}
-                        {{--<li>{{ $point[0] }}, {{ $point[1] }}</li>--}}
-                        {{--@endforeach--}}
-                        {{--</ul>--}}
                     </div>
                 </div>
             </div>

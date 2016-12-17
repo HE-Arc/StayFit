@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Session;
 use Illuminate\Http\Request;
+use Auth;
+use App\Http\Requests;
+use App\Http\Requests\UserProfileRequest;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::User();
+        return view('home', ['user' => $user]);
     }
 }

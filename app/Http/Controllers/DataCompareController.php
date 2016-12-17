@@ -31,17 +31,15 @@ class DataCompareController extends Controller
      */
     public function index()
     {
-        $userId=Auth::user()->id;
-        $data=DataSample::select('date','footsteps','duration','distance','calories')->where('user_id',$userId)->get();
-        $data=DataSample::select('id','date','footsteps','duration','distance','calories')->where('user_id',$userId)->pluck('date', 'id');
+        $user=Auth::user();
+        $data=$user->sessions()->with('activity')->get();
+        $data=$user->sessions()->with('activity')->pluck('date', 'id');
         return view('dataCompare',['data'=>$data]);
     }
     public function send(DataCompareRequest $request)
     {
         $data1 = Session::find($request->items);
         $data2 = Session::find($request->items2);
-
-        $lava = new Lavacharts;
 
         $time1 = $data1->duration;
         $parsed1 = date_parse($time1);
@@ -51,7 +49,7 @@ class DataCompareController extends Controller
         $parsed2 = date_parse($time2);
         $seconds2 = $parsed2['hour'] * 3600 + $parsed2['minute'] * 60 + $parsed2['second'];
 
-        $speedAverage = $lava->DataTable();
+        $speedAverage = Lava::DataTable();
         $speedAverage->addStringColumn('Type')
             ->addNumberColumn('Value')
             ->addRow(['Av speed 1', (($data1->distance)/$seconds1)*3.6])
