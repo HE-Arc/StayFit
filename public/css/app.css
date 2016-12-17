@@ -5750,8 +5750,6 @@ button.close {
   background-color: rgba(133, 224, 106, 0.88); }
 
 #app-layout {
-  animation: fadein 2s;
-  transition: fadein 2s;
   background-color: #4cae4c;
   background-image: url("../assets/images/Shoot1Comp.jpg");
   background-size: cover;
@@ -5761,7 +5759,7 @@ button.close {
 
 @keyframes fadein {
   from {
-    opacity: 0; }
+    opacity: 0.5; }
   to {
     opacity: 1; } }
 
