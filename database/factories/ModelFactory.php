@@ -16,10 +16,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'pseudo' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt("pass1234"),
-        'size' => random_int(100, 300),
-        'weight' => random_int(40, 200),
+        'size' => random_int(100, 250),
+        'weight' => random_int(45, 200),
         'birth_date' => $faker->date('Y-m-d'),
-        'gender' => "M",
+        'gender' => collect(['M','F'])->random(),
         'bmi' => random_int(100, 300),
     ];
 });
