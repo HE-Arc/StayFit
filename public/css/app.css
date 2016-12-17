@@ -5751,7 +5751,7 @@ button.close {
 
 #app-layout {
   background-color: #4cae4c;
-  background-image: url("../assets/images/Shoot1Comp.jpg");
+  background-image: url("../assets/images/Shoot1CompDownScaled.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5762,22 +5762,6 @@ button.close {
     opacity: 0.5; }
   to {
     opacity: 1; } }
-
-#app-layout.selection {
-  color: #4cae4c;
-  background-image: url("../assets/images/Shoot6Comp.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
-
-#app-layout.dataSample {
-  color: #4cae4c;
-  background-image: url("../assets/images/Shoot3FilterW.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
 
 .navbar {
   color: whitesmoke;
