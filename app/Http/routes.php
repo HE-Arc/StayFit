@@ -28,12 +28,9 @@ Route::post('/user', ['uses' => 'UserProfileController@postForm','as' => 'user.u
 
 Route::get('/selection','DataSelectionController@index');
 
-//
-
 Route::get('/selection/{id}' ,'DataSelectionController@send');
 
 Route::get('/compare','DataCompareController@index');
-Route::post('/compare',['uses' => 'DataCompareController@send','as' => 'selectionSample']);
-//Route::get('/compare/{id}' ,'DataCompareController@send');
+Route::post('/compare',['uses' => 'DataCompareController@send','as' => 'compareSelection']);
 
 

@@ -9,9 +9,9 @@
                     <div class="panel-body">
                         {!! Form::open(['route' => 'addDataSample']) !!}
                         <div class="form-group">
-                            {!! Form::label('File to import') !!}
-                            {!! Form::file('dataSample', null, ['required','class'=>'form-control']) !!}
-                            {!! Form::submit('Submit!', ['class' => 'btn btn-info pull-right']) !!}
+                            <p>{!! Form::file('dataSample', null) !!}</p>
+                            <p>{!! Form::submit('Validate') !!}</p>
+
                         </div>
                         {!! Form::close() !!}
                     </div>

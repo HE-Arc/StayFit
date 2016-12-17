@@ -34,8 +34,7 @@ class DataCompareController extends Controller
         $userId=Auth::user()->id;
         $data=DataSample::select('date','footsteps','duration','distance','calories')->where('user_id',$userId)->get();
         $data=DataSample::select('id','date','footsteps','duration','distance','calories')->where('user_id',$userId)->pluck('date', 'id');
-        $typeActivity=Activity::select('name');
-        return view('dataCompare',['data'=>$data,'type'=>$typeActivity]);
+        return view('dataCompare',['data'=>$data]);
     }
     public function send(DataCompareRequest $request)
     {
