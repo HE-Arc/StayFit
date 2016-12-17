@@ -7,6 +7,9 @@ use App\Http\Requests;
 use App\Session;
 use Khill\Lavacharts\Lavacharts;
 use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
+use Auth;
+use App\Activity;
+use App\DataSample;
 class DataCompareController extends Controller
 {
     /**
@@ -25,6 +28,15 @@ class DataCompareController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        $userId=Auth::user()->id;
+        $data=DataSample::select('date','footsteps','duration','distance','calories')->where('user_id',$userId)->get();
+        $data=DataSample::select('id','date','footsteps','duration','distance','calories')->where('user_id',$userId)->pluck('date', 'id');
+        $typeActivity=Activity::select('name');
+
+        return view('dataCompare',['data'=>$data,'type'=>$typeActivity]);
+    }
+    public function send($request)
     {
         $data1 = Session::find(10);
         $data2 = Session::find(12);

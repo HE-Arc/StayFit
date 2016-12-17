@@ -30,5 +30,6 @@ Route::get('/selection','DataSelectionController@index');
 Route::get('/selection/{id}' ,'DataSelectionController@send');
 
 Route::get('/compare','DataCompareController@index');
+Route::get('/compare/{id}' ,'DataCompareController@send');
 
 
