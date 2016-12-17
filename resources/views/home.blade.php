@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Welcome {!!\Illuminate\Support\Facades\Auth::user()->pseudo!!} !</div>
 
-                <div class="panel-body">
+                <div class="panel-body jumbotron">
                     You are logged in!
                 </div>
             </div>
