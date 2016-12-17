@@ -8,11 +8,13 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
                     {!! Form::open (['route'=>'compareSelection']) !!}
-                    <p>1st session for comparison </p>
-                    <p>{!! Form::select('items', $data, null) !!}</p>
-                    <p>2nd session for comparison </p>
-                    <p>{!! Form::select('items2', $data, null) !!}</p>
-                    <p>{!! Form::submit('Compare') !!}</p>
+                    <div class="form-group">
+                        <p>1st session for comparison </p>
+                        <p>{!! Form::select('items', $data, null) !!}</p>
+                        <p>2nd session for comparison </p>
+                        <p>{!! Form::select('items2', $data, null) !!}</p>
+                        <p>{!! Form::submit('Compare') !!}</p>
+                    </div>
                     {!! Form::close() !!}
                 </div>
             </div>

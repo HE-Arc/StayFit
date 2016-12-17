@@ -11,7 +11,6 @@
                         <div class="form-group">
                             <p>{!! Form::file('dataSample', null) !!}</p>
                             <p>{!! Form::submit('Validate') !!}</p>
-
                         </div>
                         {!! Form::close() !!}
                     </div>
