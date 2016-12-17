@@ -9,12 +9,12 @@
 
                 <div class="panel-body jumbotron">
                     <p><b> You personnal informations</b></p>
-                    <p>pseudo: {{$user->pseudo}}</p>
-                    <p>email: {{$user->email}}</p>
-                    <p>birthdate: {{$user->birth_date}}</p>
-                    <p>weight: {{$user->weight}}</p>
-                    <p>size: {{$user->size}}</p>
-                    <p>gender: {{$user->gender}}</p>
+                    <p>Pseudo: {{$user->pseudo}}</p>
+                    <p>Email: {{$user->email}}</p>
+                    <p>Birthdate: {{$user->birth_date}}</p>
+                    <p>Weight: {{$user->weight}}</p>
+                    <p>Size: {{$user->size}}</p>
+                    <p>Gender: {{$user->gender}}</p>
                 </div>
             </div>
         </div>

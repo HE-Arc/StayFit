@@ -5739,7 +5739,9 @@ button.close {
   border: none; }
 
 .panel-body {
-  opacity: 0.9; }
+  opacity: 0.9;
+  height: 83vh;
+  overflow-y: scroll; }
 
 .sessionItems {
   background-color: rgba(189, 228, 174, 0.91);
