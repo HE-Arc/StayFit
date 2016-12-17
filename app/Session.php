@@ -59,6 +59,6 @@ class Session extends Model
 
     public function activity()
     {
-        return $this->belongsTo('App\activity');
+        return $this->belongsTo('App\Activity');
     }
 }
