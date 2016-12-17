@@ -32,7 +32,6 @@ class DataCompareController extends Controller
     public function index()
     {
         $user=Auth::user();
-        $data=$user->sessions()->with('activity')->get();
         $data=$user->sessions()->with('activity')->pluck('date', 'id');
         return view('dataCompare',['data'=>$data]);
     }
