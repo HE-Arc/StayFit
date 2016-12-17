@@ -7,11 +7,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
-                    <div id="perf_div"></div>
-                    {!! Form::open (['route'=>'selectionSample']) !!}
-                    {!! Form::select('items', $data, null) !!}
-                    {!! Form::select('items2', $data, null) !!}
-                    {!! Form::submit('Comparer') !!}
+                    {!! Form::open (['route'=>'compareSelection']) !!}
+                    <p>1st session for comparison </p>
+                    <p>{!! Form::select('items', $data, null) !!}</p>
+                    <p>2nd session for comparison </p>
+                    <p>{!! Form::select('items2', $data, null) !!}</p>
+                    <p>{!! Form::submit('Compare') !!}</p>
                     {!! Form::close() !!}
                 </div>
             </div>
