@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body id="app-layout">
+<body id="app-layout" class="{{Route::getFacadeRoot()->current()->uri()}}">
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container"> <!-- TODO:, add style as attribute (example style="color:blue;text-align:center") avec comme attribute  background-image:url('yourimage.file'); -->
         <div class="navbar-header">
