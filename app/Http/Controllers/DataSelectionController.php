@@ -31,19 +31,17 @@ class DataSelectionController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $data=$user->sessions()->with('activity')->get();
+        $data = $user->sessions()->with('activity')->get();
         return view('dataSelection', ['data' => $data]);
     }
 
     public function send($request)
     {
-        //Get session row where id=selected one ($request) and where user_id correspond to
-        // current user => if not, it means that this user doesn't have right to display this session.
-        $result = Session::where('id',$request)->where('user_id',Auth::id())->first();
-        if(count($result)==1)
-        {
-            return view('dataView', ['data' => $result]);
-        }else{
+        $user = Auth::user();
+        $session = $user->sessions()->where('id', $request)->first();
+        if ($user->can('view', $session)) {
+            return view('dataView', ['data' => $session]);
+        } else {
             return redirect('/');
         }
     }

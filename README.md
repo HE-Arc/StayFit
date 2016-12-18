@@ -25,3 +25,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Installation
+
+* `git clone https://github.com/HE-Arc/StayFit.git`
+* `cd Stayfit`
+* `composer install`
+* `copy the .env.example file to .env`
+* `php artisan key:generate`
+* `create a database and configure the .env`
+* `php artisan migrate --seed ` to populate the databse 

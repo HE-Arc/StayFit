@@ -25,7 +25,7 @@ class DataSampleController extends Controller
 
     public function postForm(DataSampleRequest $request)
     {
-        $file = $request->input('dataSample');
+        $file = $request->file('dataSample');
         if (file_exists($file)) {
             $string = file_get_contents($file);
             $data = json_decode($string, true);

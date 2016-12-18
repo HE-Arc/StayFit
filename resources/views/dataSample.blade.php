@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Import personnal Stayfit data</div>
                     <div class="panel-body">
-                        {!! Form::open(['route' => 'addDataSample']) !!}
+                        {!! Form::open(['route' => 'addDataSample','enctype'=>'multipart/form-data']) !!}
                         <div class="form-group row">
                             <div class="col-md-9">
                                 {!! Form::file('dataSample', null) !!}
