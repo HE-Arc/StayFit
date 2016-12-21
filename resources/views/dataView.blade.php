@@ -35,11 +35,10 @@
                                 <script>
                                     var map = L.map('mapid').setView([51.505, -0.09], 13);
                                     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                                        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                        attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                     }).addTo(map);
 
-                                    var points = "{!! json_encode($data->geometry)!!}";
-                                    var pointTab = JSON.parse(points);
+                                    var pointTab = {!! json_encode($data->geometry)!!};
 
                                     for (var i = 0; i < pointTab.length; i++) {
                                         L.marker([pointTab[i][0], pointTab[i][1]]).addTo(map)

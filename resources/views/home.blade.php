@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome {{$user->pseudo}}</div>
 
                 <div class="panel-body jumbotron">
-                    <p><b> You personnal informations</b></p>
+                    <p><b> You<i>r</i> perso<i>n</i>al informations</b></p>
                     <p>Pseudo: {{$user->pseudo}}</p>
                     <p>Email: {{$user->email}}</p>
                     <p>Birthdate: {{$user->birth_date}}</p>

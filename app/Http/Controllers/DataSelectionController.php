@@ -2,14 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Activity;
-use App\DataSample;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Auth;
-use App\Session;
-use Khill\Lavacharts\Lavacharts;
-use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
 
 class DataSelectionController extends Controller
 {
